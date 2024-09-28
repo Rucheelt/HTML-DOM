@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>HTML form</h2>
+    <form id="Formllogin" onsubmit="validate(event)">
+
+        <fieldset>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+
+            </div>
+            <div></div>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password">
+
+            </div>
+            <button type="submit">Login</button>
+
+        </fieldset>
+    </form>
+    <div id="message">
+
+    </div>
+    <script>
+        function validate(event)
+        {
+            event.preventDefault();
+        
+
+        const email=document.getElementById("email").value;
+        const password=document.getElementById("password").value;
+        const messagebox=document.getElementById("message");
+
+        let message="";
+        if (email=== "") 
+        {
+            message="Please enter the emailID"
+            messagebox.style.color="red"
+        }
+        else if (password==="")
+        {
+            message="Please enter the password"
+            messagebox.style.color="red"
+        }
+        else 
+        {
+            message="Login succesfull"
+            messagebox.style.color="green"
+        }
+        messagebox.innerHTML=message;
+    }
+
+
+
+
+
+    
+    </script>
+    
+</body>
+</html>
